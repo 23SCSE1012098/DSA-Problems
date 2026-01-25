@@ -18,6 +18,25 @@
 //     }
 // }
 
+// import java.util.Arrays;
+
+// class Solution {
+//     public int minimumDifference(int[] nums, int k) {
+//         if (k == 1) return 0;
+
+//         Arrays.sort(nums);
+//         int minimum = Integer.MAX_VALUE;
+
+//         for (int i = 0; i + k - 1 < nums.length; i++) {
+//             int diff = nums[i + k - 1] - nums[i];
+//             minimum = Math.min(minimum, diff);
+//         }
+
+//         return minimum;
+//     }
+// }
+
+
 import java.util.Arrays;
 
 class Solution {
@@ -25,11 +44,17 @@ class Solution {
         if (k == 1) return 0;
 
         Arrays.sort(nums);
-        int minimum = Integer.MAX_VALUE;
 
-        for (int i = 0; i + k - 1 < nums.length; i++) {
-            int diff = nums[i + k - 1] - nums[i];
+        int minimum = Integer.MAX_VALUE;
+        int start = 0;
+        int end = k - 1;
+
+        while (end < nums.length) {
+            int diff = nums[end] - nums[start];
             minimum = Math.min(minimum, diff);
+
+            start++;
+            end++;
         }
 
         return minimum;
