@@ -35,7 +35,7 @@ class Solution {
                 }
             }
         }
-        return -1;
+        return cost[n-1][m-1];
 
         
     }
