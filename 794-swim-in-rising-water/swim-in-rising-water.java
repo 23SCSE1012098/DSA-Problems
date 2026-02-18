@@ -29,7 +29,7 @@ class Solution {
                     int max= Math.max(cos , grid[newr][newc]);
                     if(max < cost[newr][newc]){
                         cost[newr][newc]=max;
-                        pq.add(new int[]{newr,newc,max});
+                        pq.add(new int[]{newr,newc,cost[newr][newc]});
                     }
                 
                 }
