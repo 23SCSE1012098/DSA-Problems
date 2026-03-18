@@ -24,7 +24,7 @@ class Solution {
             return root;
         }
 
-        if (left != null) {
+        if (left != null && right==null) {
             return left;
         }
 
