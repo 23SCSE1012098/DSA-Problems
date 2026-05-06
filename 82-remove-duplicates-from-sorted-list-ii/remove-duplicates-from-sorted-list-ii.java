@@ -10,27 +10,22 @@
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        // Dummy node before head to handle edge cases
         ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
-        ListNode prev = dummy;   // last node before duplicates
+        dummy.next=head;
+        ListNode prev = dummy;
         ListNode curr = head;
-
-        while (curr != null) {
-            // Detect duplicates
-            while (curr.next != null && curr.val == curr.next.val) {
-                curr = curr.next;
+        while(curr !=null){
+            while(curr.next !=null && curr.val == curr.next.val){
+                curr=curr.next;
             }
-
-            // If prev.next != curr, duplicates were found
-            if (prev.next != curr) {
-                prev.next = curr.next; // remove all duplicates
-            } else {
-                prev = prev.next; // move prev normally
+            if(prev.next !=curr){
+                prev.next=curr.next;
             }
+            else{
+                prev=prev.next;
+            }
+            curr=curr.next;
 
-            curr = curr.next;
         }
         return dummy.next;
     }
