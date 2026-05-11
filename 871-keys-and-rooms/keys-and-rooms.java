@@ -2,7 +2,7 @@ class Solution {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
         int n = rooms.size();
         boolean [] visited= new boolean [n];
-        visited[0]=true;
+        // visited[0]=true;
         bfs(0,rooms,visited);
         for(int i=0;i<n;i++){
             if(visited[i] !=true){
