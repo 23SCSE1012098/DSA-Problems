@@ -14,12 +14,12 @@ class Solution {
             adj.get(v).add(u);
         }
         boolean [] visited = new boolean [n];
-        bfs(source,adj,visited);
+        bfs(source,adj,visited,destination);
         return visited[destination];
 
             
     }
-    public static void bfs (int curr, ArrayList<ArrayList<Integer>> adj,boolean [] visited){
+    public static void bfs (int curr, ArrayList<ArrayList<Integer>> adj,boolean [] visited,int destination){
         Queue<Integer> queue = new LinkedList<>();
         queue.add(curr);
         visited[curr]=true;
@@ -29,6 +29,7 @@ class Solution {
                 if(!visited[x]){
                     queue.add(x);
                     visited[x]=true;
+                    if(curr==destination) return;
                 }
             }
         }
