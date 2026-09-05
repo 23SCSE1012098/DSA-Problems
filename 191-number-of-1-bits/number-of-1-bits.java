@@ -1,10 +1,23 @@
+// class Solution {
+//     public int hammingWeight(int n) {
+//         int count=0;
+//         for(int i=31;i>=0;i--){
+//             if(((n>>i)&1) ==1){
+//                 count++;
+//             }
+//         }
+//         return count;
+
+        
+//     }
+// }
+
 class Solution {
     public int hammingWeight(int n) {
         int count=0;
-        for(int i=31;i>=0;i--){
-            if(((n>>i)&1) ==1){
-                count++;
-            }
+        while(n>0){
+            count+=(n%2);
+            n/=2;
         }
         return count;
 
